@@ -1,0 +1,46 @@
+body {
+  display: flex;
+}
+body > div {
+  position: relative;
+  min-width: 100px;
+  min-height: 350px;
+  background: linear-gradient(
+    32deg,
+    rgba(238, 136, 207, 1) 0%,
+    rgba(45, 253, 237, 1) 100%
+  );
+  border-radius: 4px;
+  margin-right: 10px;
+  font-size: 40px;
+  flex-grow: 1;
+  transition: 250ms;
+}
+body > div:first-child {
+  flex-grow: 2;
+}
+body:hover div {
+  flex-grow: 1;
+}
+body > div::first-letter {
+  margin-left: 10px;
+}
+body > div:hover {
+  flex-grow: 2;
+  animation: nud_ydraana ease forwards 250ms infinite;
+}
+
+@keyframes nud_ydraana {
+  0% {
+    top: 0;
+  }
+  30% {
+    top: 5px;
+  }
+  70% {
+    top: -5px;
+  }
+  100% {
+    top: 0;
+  }
+}

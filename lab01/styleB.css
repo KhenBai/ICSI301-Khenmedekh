@@ -1,0 +1,25 @@
+body {
+  display: flex;
+}
+body > div {
+  min-width: 100px;
+  height: 150px;
+  background-color: #eeeff2;
+  border-left: 10px solid #d0d0ff;
+  border-left-style: dotted;
+  margin-right: 10px;
+  font-size: 40px;
+}
+body > div::first-letter {
+  margin-left: 10px;
+}
+body > div:last-of-type {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+body > div:hover {
+  cursor: pointer;
+  background-color: yellow;
+  color: goldenrod;
+}
