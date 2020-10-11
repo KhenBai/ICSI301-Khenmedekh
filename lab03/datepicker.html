@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <title>CS 142 Project 3, Problem 1</title>
+    <link rel="stylesheet" type="text/css" href="datepicker.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>First DatePicker</h1>
+    <div id="datepicker1" class="Date-cont"></div>
+    <h1>Second DatePicker</h1>
+    <div id="datepicker2" class="Date-cont"></div>
+    <script type="text/javascript" src="DatePicker.js"></script>
+    <script type="text/javascript">
+      //<![CDATA[
+      datepicker1 = new DatePicker("datepicker1", function (id, fixedDate) {
+        console.log(
+          "DatePicker with id",
+          id,
+          "selected date:",
+          fixedDate.month + "/" + fixedDate.day + "/" + fixedDate.year
+        );
+      });
+      datepicker1.render(new Date());
+      datepicker2 = new DatePicker("datepicker2", function (id, fixedDate) {
+        console.log(
+          "DatePicker with id",
+          id,
+          "selected date:",
+          fixedDate.month + "/" + fixedDate.day + "/" + fixedDate.year
+        );
+      });
+      datepicker2.render(new Date("1/1/2009"));
+      //]]>
+    </script>
+  </body>
+</html>
