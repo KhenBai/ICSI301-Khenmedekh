@@ -1,0 +1,41 @@
+/* This is a CSS style sheet for rules that should be applied over the
+   entire application.  We are not using the name prefix for these rules.  */
+
+/* class="container" - Sets some margins around the element so it is spaced
+                       from the top, bottom, and sides of the window. */
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  font-family: "Commissioner", sans-serif;
+  color: rgb(70, 70, 70);
+}
+
+.container {
+  background-color: #fefefe;
+  max-width: 800px;
+  padding: 50px;
+  border-radius: 6px;
+  box-shadow: 0px 3px 6px 0px rgb(90, 90, 90);
+  margin: 83px auto;
+}
+.Switcher {
+  position: fixed;
+  top: 90px;
+  left: 10px;
+  cursor: pointer;
+  background-color: rgb(255, 175, 55);
+  color: #fefefe;
+  box-shadow: 1px 2px 5px 0px rgba(153, 84, 0, 0.795);
+  font-size: 12px;
+  width: 70px;
+  border-radius: 10px;
+  padding: 5px;
+  text-align: center;
+}
+.Switcher * {
+  text-decoration: none;
+  color: inherit;
+}
