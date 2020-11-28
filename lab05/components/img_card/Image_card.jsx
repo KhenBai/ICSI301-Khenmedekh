@@ -76,7 +76,7 @@ export default function RecipeReviewCard(props) {
                   {props.data.comments?(
                       props.data.comments.map((el, ind) => {
                           return (
-                              <div className="Comment">
+                              <div className="Comment" key={ind}>
                                   <div><Link to={`/users/${el.user._id}`}>{`${el.user.first_name} ${el.user.last_name}`}</Link><span>{el.date_time }</span></div>
                                   <Typography paragraph>
                                       {el.comment}

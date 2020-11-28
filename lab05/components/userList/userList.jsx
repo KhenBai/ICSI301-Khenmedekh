@@ -17,10 +17,14 @@ class UserList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      List:window.cs142models.userListModel()
+      List:[]
     }
   }
-
+  componentDidMount() {
+    fetch('/user/list').then(response => response.json()).then(data => this.setState({
+      List: data
+    }));
+  }
   render() {
     return (
       <div>

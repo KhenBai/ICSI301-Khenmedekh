@@ -12,27 +12,47 @@ import Image_card from "../img_card/Image_card"
 class UserPhotos extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {...window.cs142models.userModel(props.match.params.userId),photos:window.cs142models.photoOfUserModel(props.match.params.userId)}
-    props.setData(this.props.match.path,this.state.first_name)
+    this.state = undefined
+    
   }
+  componentDidMount () {
+    fetch(`/user/${this.props.match.params.userId}`).then(response => response.json()).then(data => {
+      this.setState({ ...data })
+      this.props.setData(this.props.match.path,data.first_name)
+    });
+    fetch(`/photosOfUser/${this.props.match.params.userId}`).then(response => response.json()).then(data => {
+      this.setState({ photos:data })
+    });
+  }
+
   componentDidUpdate(prevprop) {
     if (prevprop.match.params.userId !== this.props.match.params.userId) {
-      this.setState({...window.cs142models.userModel(this.props.match.params.userId), photos:window.cs142models.photoOfUserModel(this.props.match.params.userId)})
-      this.props.setData(this.props.match.path,window.cs142models.userModel(this.props.match.params.userId).first_name)
+     fetch(`/user/${this.props.match.params.userId}`).then(response => response.json()).then(data => {
+      this.setState({ ...data })
+      this.props.setData(this.props.match.path,data.first_name)
+    });
+    fetch(`/photosOfUser/${this.props.match.params.userId}`).then(response => response.json()).then(data => {
+      this.setState({ photos:data })
+    });
     }
   }
   render() {
-    console.log(this.state.photos)
     return (
       <div className="userPhoto">
-        <div className="MYBUTTON">
+        {this.state ? (
+        <React.Fragment>
+          <div className="MYBUTTON">
         <Link to={`/users/${this.state._id}`} >
             <Typography variant="button" style={{fontSize:18}}>See details of {this.state.first_name}</Typography>
         </Link>
         </div>
-        {
-          this.state.photos.map((el, ind) => <Image_card key={ind} data={el} name={this.state.first_name + " "+ this.state.last_name} />)
-          }
+        {this.state.photos?
+          this.state.photos.map((el, ind) => <Image_card key={ind} data={el} name={this.state.first_name + " "+ this.state.last_name} />):""
+            }
+        </React.Fragment>
+        ):""
+      }
+        
       </div>
 
     );
