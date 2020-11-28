@@ -1,0 +1,23 @@
+.userPhoto {
+  overflow-y: scroll;
+  height: 100%;
+  position: relative;
+}
+.userPhoto::-webkit-scrollbar {
+  width: 5px;
+}
+.userPhoto::-webkit-scrollbar-thumb {
+  background-color: #3f51b5;
+  width: 5px;
+  border-radius: 2px;
+}
+.MYBUTTON {
+  top: 0;
+  background-color: white;
+  padding: 10px;
+  position: sticky;
+}
+.Comment > div:first-child {
+  display: flex;
+  justify-content: space-between;
+}
