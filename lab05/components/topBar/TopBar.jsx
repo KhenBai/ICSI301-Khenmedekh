@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link,useLocation} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import {
   AppBar, Toolbar, Typography
 } from '@material-ui/core';
@@ -30,7 +30,7 @@ class TopBar extends React.Component {
         <Toolbar>
           <Typography variant="h5" color="inherit">
             <Link to="/">
-              Khebe's Photo Sharing Web &nbsp; &lt;(￣︶￣)&gt;
+              Khebe&apos;s Photo Sharing Web &nbsp; &lt;(￣︶￣)&gt;
             </Link>
           </Typography>
           <Typography variant="h5">
